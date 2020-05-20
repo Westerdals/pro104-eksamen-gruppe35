@@ -18,26 +18,29 @@
 
     <h1>Projects</h1>
     <div class="projectContainer">
-        <div class="projects">
+
+        <div class="projects green">
             <h3 class="projectName">Webshop</h3>
             <p class="projectDescription">Description</p>
         </div>
-        <div class="projects">
+
+        <div class="projects yellow">
             <h3 class="projectName">Mekonomen</h3>
             <p class="projectDescription">Description</p>
         </div>
 
-        <div onclick="createProject()" id="newProject">
+        <div onclick="togglePopup()" id="newProject">
             <h4>New Project</h4>
             <p>+</p>
         </div>
+
     </div>
 
 
     <div id="popup">
         <div class="popup-inner">
 
-            <a onclick="closePopup()" href="#" class="close"></a>
+            <a onclick="togglePopup()" href="#" class="close"></a>
 
 
 
@@ -72,7 +75,7 @@
 
 </body>
 <script>
-    function closePopup() {
+    function togglePopup() {
         var x = document.getElementById("popup");
         if (x.style.display === "none") {
             x.style.display = "block";
