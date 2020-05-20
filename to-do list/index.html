@@ -38,21 +38,21 @@
 <!--Add new task popup-->
     <div id="popup_background">
         <div id="popup_main_div">
-            <form onsubmit="test(event)">
-                <div>New Task</div>
+            <form onsubmit="createTask(event)">
+                <div><input id="taskName" placeholder="Task Name"/></div>
                 <div>
                     <label>Member
-                        <div><input name="name" placeholder="Lars Hjelen"/></div>
+                        <div><input id="member" placeholder="Lars Hjelen"/></div>
                     </label>
                 </div>
                 <div>
                     <label>Due Date
-                        <div><input type="date"></div>
+                        <div><input id="date" type="date"></div>
                     </label>
                 </div>
                 <div>
                     <label>Priority
-                        <div><input type="color" list="presetColors">
+                        <div><input id="color" type="color" list="presetColors">
                             <datalist id="presetColors">
                               <option>#ff0000</option>/>
                               <option>#00ff00</option>
@@ -62,7 +62,7 @@
                 </div>
                 <div>
                     <label>Description:
-                        <div><textarea name="description" placeholder="Description of the task..."></textarea></div>
+                        <div><textarea id="description" placeholder="Description of the task..."></textarea></div>
                     </label>
                 </div>
                 <div>
@@ -77,8 +77,12 @@
             </div>
         </div>
     </div>
+
+<!-- Edit task popup-->
+    <div></div>
     
     <script src="./mainpage.js"></script>
     <script src="./newTask.js"></script>
+    <script src="./editTask.js"></script>
 </body>
 </html>
