@@ -1,0 +1,34 @@
+#popup_background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    display: none;
+}
+#popup_main_div {
+    position: fixed;
+    width: 800px;
+    height: 600px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    left: 50%;
+    margin-left: -400px;
+    top: 50%;
+    margin-top: -350px;
+}
+#popup_close_div {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+}
+#popup_close_div p {
+    margin-top: 0;
+    font-weight: bold;
+}

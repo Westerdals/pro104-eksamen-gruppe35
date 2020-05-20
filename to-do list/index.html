@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./style.css">
+    <title>ToDo List</title>
+</head>
+<body>
+   
+    <header>
+        <div>
+            <h1>Webshop</h1>
+            <i class="far fa-edit"></i>
+        </div>
+    </header>
+
+    <div>Project Overview</div>
+    <button onclick="openPopup()">New Task</button>
+
+    <div id="task_lists">
+        <div id="to_do_container">
+            <p>To Do</p>
+            <ul id="to_do_list"></ul>
+        </div>
+        <div id="in_progress_container">
+            <p>In Progress</p>
+            <ul id="in_progress_list"></ul>
+        </div>
+        <div id="done_container">
+            <p>Done</p>
+            <ul id="done_list"></ul>
+        </div>
+    </div>
+
+<!--Add new task popup-->
+    <div id="popup_background">
+        <div id="popup_main_div">
+            <form onsubmit="test(event)">
+                <div>New Task</div>
+                <div>
+                    <label>Member
+                        <div><input name="name" placeholder="Lars Hjelen"/></div>
+                    </label>
+                </div>
+                <div>
+                    <label>Due Date
+                        <div><input type="date"></div>
+                    </label>
+                </div>
+                <div>
+                    <label>Priority
+                        <div><input type="color" list="presetColors">
+                            <datalist id="presetColors">
+                              <option>#ff0000</option>/>
+                              <option>#00ff00</option>
+                              <option>#0000ff</option>
+                            </datalist></div>
+                    </label>
+                </div>
+                <div>
+                    <label>Description:
+                        <div><textarea name="description" placeholder="Description of the task..."></textarea></div>
+                    </label>
+                </div>
+                <div>
+                    <input type="submit"/>
+                </div>
+                
+            </form>
+            <div id="popup_close_div" title="Close" onclick="closePopup()">
+                <p>
+                    X
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./mainpage.js"></script>
+    <script src="./newTask.js"></script>
+</body>
+</html>
