@@ -1,4 +1,4 @@
-#popup_background {
+.background_for_popup {
     position: fixed;
     top: 0;
     left: 0;
@@ -7,7 +7,7 @@
     background-color: rgba(0,0,0,0.7);
     display: none;
 }
-#popup_main_div {
+.popup_main {
     position: fixed;
     width: 800px;
     height: 600px;
@@ -19,7 +19,7 @@
     top: 50%;
     margin-top: -350px;
 }
-#popup_close_div {
+.popup_close {
     position: absolute;
     width: 25px;
     height: 25px;
