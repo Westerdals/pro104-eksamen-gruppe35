@@ -1,11 +1,11 @@
-var popupDiv = document.getElementById("popup_background");
+var newTaskPopupDiv = document.getElementById("new_task_popup");
 var memberPopupDiv = document.getElementById("popup_member_background");
 
-function openNewTask(){
-    newTaskPopup.style.display = "block";
+function openNewTaskPopup(){
+    newTaskPopupDiv.style.display = "block";
 }
 function closePopup(){
-    popupDiv.style.display = "none";
+    newTaskPopupDiv.style.display = "none";
 }
 
 function openMemberPopup(){

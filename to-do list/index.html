@@ -18,7 +18,7 @@
     </header>
 
     <div>Project Overview</div>
-    <button onclick="openNewTask()">New Task</button>
+    <button onclick="openNewTaskPopup()">New Task</button>
 
     <div>Members</div>
     <div id="member_container">
@@ -43,7 +43,7 @@
 
 
 <!--Add new task popup-->
-    <div id="popup_background" class="background_for_popup">
+    <div id="new_task_popup" class="background_for_popup">
         <div id="popup_main_div" class="popup_main">
             <form onsubmit="createTask(event)">
                 <label>Task
