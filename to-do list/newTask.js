@@ -20,7 +20,7 @@ function createTask(){
 
     renderToDoList();
     
-    closePopup();
+    closeNewTask();
     event.target.reset();
 
 
@@ -49,7 +49,7 @@ function renderToDoList(){
         const {taskName, member, color, description} = task;
 
         //setter opp tasks på siden.
-        newTask.innerHTML = `<div 
+        newTask.innerHTML = `<div class="task_box"
                                 style="height:70px;
                                     width:200px; 
                                     color:white; 

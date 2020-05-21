@@ -1,8 +1,8 @@
-var popupDiv = document.getElementById("popup_background");
+var newTaskPopup = document.getElementById("new_task_popup");
 
-function openPopup(){
-    popupDiv.style.display = "block";
+function openNewTask(){
+    newTaskPopup.style.display = "block";
 }
-function closePopup(){
-    popupDiv.style.display = "none";
+function closeNewTask(){
+    newTaskPopup.style.display = "none";
 }
