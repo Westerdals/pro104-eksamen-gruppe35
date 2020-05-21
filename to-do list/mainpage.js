@@ -4,7 +4,7 @@ var memberPopupDiv = document.getElementById("popup_member_background");
 function openNewTaskPopup(){
     newTaskPopupDiv.style.display = "block";
 }
-function closePopup(){
+function closeNewTaskPopup(){
     newTaskPopupDiv.style.display = "none";
 }
 

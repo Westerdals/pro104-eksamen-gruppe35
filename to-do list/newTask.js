@@ -20,7 +20,7 @@ function createTask(){
 
     renderToDoList();
     
-    closeNewTask();
+    closeNewTaskPopup();
     event.target.reset();
 
 
