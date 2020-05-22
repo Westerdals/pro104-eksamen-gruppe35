@@ -9,8 +9,9 @@ function createTask(){
     const date = document.getElementById("date").value;
     const color = document.getElementById("color").value;
     const description = document.getElementById("description").value;
+    const updateArrey = [];
 
-    const task = {taskName, member, date, color, description};
+    const task = { taskName, member, date, color, description, updateArrey };
 
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
 
@@ -47,7 +48,7 @@ function renderToDoList(){
         const newTask = document.createElement("div");
 
         //Henter verdiene fra objektet så vi kan sette dem opp på siden.
-        const {taskName, member, date, color, description} = task;
+        const {taskName, member, date, color, description,} = task;
 
         //setter opp tasks på siden.
         newTask.innerHTML = `<div id="${taskNumber}" class="task_box"
@@ -57,6 +58,7 @@ function renderToDoList(){
                                     border:1px solid black; 
                                     background-color: ${color}">
                                 <h3>${taskName}</h3>
+                                
                                 <p>${date}</p>
                                 <p>${description}</p>
                                 <button onclick="editTask(${taskNumber})" value="Edit Task"></button>
