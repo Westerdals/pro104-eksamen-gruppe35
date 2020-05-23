@@ -89,11 +89,12 @@
                 </div>
                 
             </form>
-            <div id="popup_close_div" class="popup_close" title="Close" onclick="closePopup()">
+            <div id="close_new_task_popup" class="popup_close" title="Close" onclick="closeNewTaskPopup()">
                 <p>
                     X
                 </p>
             </div>
+        
         </div>
     </div>
 
@@ -121,13 +122,68 @@
 
 <!-- Edit task popup-->
     <div>
-        <div id="edit_task_popup">
+        <div id="edit_task_popup" class="background_for_popup">
+            <div id="edit_task_popup" class="popup_main">
+                <form onsubmit="saveEditTask(event)">
+                    <label>Task
+                    <div><input id="saved_task_name" value="Task Name"/></div>
+                    <div>
+                    </label>
+                        <label>Member
+                            <div><input id="saved_member" value="Lars Hjelen"/></div>
+                        </label>
+                    </div>
+                    <div>
+                        <label>Due Date
+                            <div><input id="saved_date" type="date" value=""></div>
+                        </label>
+                    </div>
+                    <div>
+                        <label>Priority
+                            <div><input id="saved_color" type="color" list="presetColors" value="">
+                                <datalist id="presetColors">
+                                  <option>#ff0000</option>/>
+                                  <option>#00ff00</option>
+                                  <option>#0000ff</option>
+                                </datalist></div>
+                        </label>
+                    </div>
+                    <div>
+                        <label>Description:
+                            <div><textarea id="saved_description" value="Description of the task..."></textarea></div>
+                        </label>
+                    </div>
+                    <div>
+                        <input type="submit"/>
+                    </div>
+                </form>
 
+                <div>
+                    
+                    <label>Updates
+                        <div><textarea id="update"></textarea></div>
+                    </label>
+                    <div>
+                        <input type="button" value="Update" onclick="saveNewUpdate()"/>
+                    </div>
+                    
+                <div id="updates_output">
+
+                </div>
+                </div>
+
+                <div id="close_edit_task_popup" class="popup_close" title="Close" onclick="closeEditTaskPopup()">
+                    <p>
+                        X
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
     
     <script src="./mainpage.js"></script>
     <script src="./newTask.js"></script>
     <script src="./editTask.js"></script>
+    <script src="./newMember.js"></script>
 </body>
 </html>

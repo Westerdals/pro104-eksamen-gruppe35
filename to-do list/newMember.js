@@ -1,6 +1,3 @@
-
-
-
 function createMember(){
     event.preventDefault();
 
@@ -32,8 +29,6 @@ function renderMemberList(){
     //Tømmer navne initialene på medlem
     memberInitials.innerHTML = "";
 
-    var memberNumber = 0;
-
     //Loopen kjører X antall ganger, der x er medlemmer i medlemslisten
     for (const memberArray of memberList) {
 
@@ -46,35 +41,35 @@ function renderMemberList(){
         //setter opp members på siden.
         newMember.innerHTML =
         `<div 
-            <p>${getInitials(member)}</p>
+            <p>${getInitials(member)} </p>
         </div>`;
 
         //Legger den nye div'en med tekst i til HTML doc
-        memberInitials.appendChild(newTask);
+        memberInitials.appendChild(newMember);
 
-        memberNumber ++;
     }
 
 }
 
 renderMemberList();
 
-function getInitials(){
+const name = document.getElementById("memberNameInput").value;
+
+function getInitials(name){
     let initials = "";
-    let newWord = true;
+    let newWord = false;
 
     for(var i=0; i < name.length; i++){
         if (!newWord) {
             initials += name[i];
-            newWord = false;
+            newWord = true;
         }
 
         if (name[i] === " ") {
-            newWord = true;
+            newWord = false;
         }
     }
 
     return initials;
-}
 
-    
+}
