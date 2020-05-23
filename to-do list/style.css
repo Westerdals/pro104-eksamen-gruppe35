@@ -12,7 +12,9 @@
                          "left middle right"
                          "footer footer footer";
     grid-template-rows: 1fr 1fr 2fr 1fr ;
-    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-columns: 2fr 2fr 2fr ;
+    max-width: 100%;
+    overflow: hidden;
  }
  .Header-Grid {
     grid-area: header;
@@ -28,16 +30,20 @@
  .Todo-Grid {
     grid-area: left;
     background: rgb(16, 163, 89);
+    border-top: grey;
+    Overflow: scroll;
     
  }
  .InProgress-Grid{
     grid-area: middle;
     background: rgb(214, 170, 126);
+    Overflow: scroll;
 
  }
  .Done-Grid{
-     background: orange;
+    background: orange;
     grid-area: right;
+    Overflow: scroll;
  }
  .Footer-Grid {
     grid-area: footer;
