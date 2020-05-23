@@ -9,38 +9,48 @@
     <title>ToDo List</title>
 </head>
 <body>
-   
-    <header>
-        <div>
-            <h1>Webshop</h1>
-            <i class="far fa-edit"></i>
-        </div>
-    </header>
 
-    <div>Project Overview</div>
-    <button onclick="openNewTaskPopup()">New Task</button>
+    <div class="container">
+        
+        <div class="Header-Grid">
+            <header>
+            <h1>Task Manager<h1>
+         </header></div>
 
-    <div>Members</div>
-    <div id="member_container">
-        <div id="member_initials"></div>
-    </div>
-    <button onclick="openMemberPopup()">New Member</button>
+     
+        <div class="Main-Grid">
+         <!--New Task Overwiev-->
+            <div>Add New Project</div>
+        <button onclick="openNewTaskPopup()">New Task</button>
+          
+        <!--members btn-->
+        <div>Members</div>
+       <div id="member_container">
+       <div id="member_initials"></div>
+        <button onclick="openMemberPopup()">New Member</button></div></div>
 
-    <div id="task_lists">
-        <div id="to_do_container">
-            <p>To Do</p>
-            <ul id="to_do_list"></ul>
-        </div>
-        <div id="in_progress_container">
-            <p>In Progress</p>
+        <div class="Todo-Grid">
+            <div id="task-lists">
+                <div id = "to_do_container">
+                <ul id="to_do_list"></ul></div>
+            </div></div>
+
+
+        <div class="InProgress-Grid">
+            <div id="in_progress_container">
             <ul id="in_progress_list"></ul>
-        </div>
-        <div id="done_container">
-            <p>Done</p>
+        </div></div>
+        
+        <div class="Done-Grid"><div id="done_container">
             <ul id="done_list"></ul>
-        </div>
-    </div>
+        </div></div>
 
+
+        <div class="Footer-Grid">Footer</div> 
+        
+    </div> 
+</div>
+    
 
 <!--Add new task popup-->
     <div id="new_task_popup" class="background_for_popup">
