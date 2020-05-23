@@ -1,5 +1,5 @@
 const editTaskPopup = document.getElementById("edit_task_popup");
-var user = "Lars Hjelen";
+var user = "Lars Sponheim";
 var savedTaskName = document.getElementById("saved_task_name");
 var savedMember = document.getElementById("saved_member");
 var savedDate = document.getElementById("saved_date");
@@ -28,7 +28,6 @@ function editTask(i){
     savedDate.value = taskList[i].date;
     savedColor.value = taskList[i].color;
     savedDescription.value = taskList[i].description;
-    //savedUpdateArrey = taskList[i].updateArrey;
 
     renderUpdates();
 }
@@ -87,7 +86,6 @@ function renderUpdates(){
 
     for(var i2 = 0; i2 < updateArreyLength; i2++){
 
-        //alert(`${savedUpdates[i2]}`)
         updatesText += `<p>
                             <p>${user}</p>
                              ${savedUpdates[i2]}
