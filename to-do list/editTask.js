@@ -9,9 +9,9 @@ var updatesOutput = document.getElementById("updates_output");
 var update = document.getElementById("update");
 
 //holder ID for tasken som er åpen for edit nå.
-var openTask; 
+var openTask;
 
-function editTask(i){
+function editTask(i) {
 
     //legger task ID ut av funksjonen så vi kan bruke den når vi lagrer
     openTask = i;
@@ -32,7 +32,7 @@ function editTask(i){
     renderUpdates();
 }
 
-function saveEditTask(){
+function saveEditTask() {
     event.preventDefault();
 
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
@@ -45,9 +45,9 @@ function saveEditTask(){
     description = savedDescription.value;
     updateArrey = taskList[openTask].updateArrey;
 
-    const task = {taskName, member, date, color, description, updateArrey};
+    const task = { taskName, member, date, color, description, updateArrey };
 
-    
+
     //'opentask' = hvilken posisjon vi skal redigere,
     //'1' = sletter så mange tasks som ligger der, 'task' = legger inn task i den ledige plassen.
     taskList.splice(openTask, 1, task);
@@ -57,34 +57,34 @@ function saveEditTask(){
 
     //refresher ToDo listen.
     renderToDoList();
-    
+
     //lukker edit popup.
     closeEditTaskPopup();
 }
 
-function saveNewUpdate(){
+function saveNewUpdate() {
 
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
 
     taskList[openTask].updateArrey.push(update.value);
-    
+
     window.localStorage.setItem("taskList", JSON.stringify(taskList));
 
     update.value = "";
     renderUpdates();
 }
 
-function renderUpdates(){
+function renderUpdates() {
 
     const taskList = JSON.parse(window.localStorage.getItem("taskList"));
 
     savedUpdates = taskList[openTask].updateArrey;
 
     updateArreyLength = savedUpdates.length;
-    
+
     var updatesText = "";
 
-    for(var i2 = 0; i2 < updateArreyLength; i2++){
+    for (var i2 = 0; i2 < updateArreyLength; i2++) {
 
         updatesText += `<p>
                             <p>${user}</p>
@@ -98,6 +98,6 @@ function renderUpdates(){
     updatesText = "";
 }
 
-function closeEditTaskPopup(){
+function closeEditTaskPopup() {
     editTaskPopup.style.display = "none";
 }

@@ -8,20 +8,6 @@ Sørge for at farger er like / stemmer overens med skisse
 Samme struktur på klassenavn / id
 */
 
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins'
-}
-
-.btn {
-    padding: 15px;
-    margin: auto;
-    font-size: 16px;
-    cursor: pointer;
-    -webkit-appearance: button;
-}
-
 
 /* Top bar */
 
@@ -154,6 +140,8 @@ Samme struktur på klassenavn / id
     grid-area: done;
 }
 
+
+/* 
 .container {
     width: auto;
     margin: 0;
@@ -255,4 +243,4 @@ h1 {
 #new_task_close_div p {
     margin-top: 0;
     font-weight: bold;
-}
+} */

@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-        integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     <link rel="stylesheet" href="./projectsstyle.css">
+    <link rel="stylesheet" href="./sharedstyles.css">
     <title>ToDo List</title>
 
 </head>
@@ -37,8 +37,8 @@
     </div>
 
 
-    <div id="popup">
-        <div class="popup-inner">
+    <div class="popup open" id="popup">
+        <div class="popupInner">
 
             <a onclick="togglePopup()" href="#" class="close"></a>
 
@@ -47,12 +47,17 @@
 
 
                 <div class="form__group">
-                    <input type="project" id="project" class="form__field" placeholder="Project name">
+                    <input type="text" id="project" class="form__field" placeholder="Project name">
                     <label for="project" class="form__label">Project name</label>
                 </div>
 
                 <div class="form__group">
-                    <textarea id="description" class="form__field" placeholder="Your description" rows="6"></textarea>
+                    <input type="text" id="owner" class="form__field" placeholder="Owner">
+                    <label for="owner" class="form__label">Owner</label>
+                </div>
+
+                <div class="form__group">
+                    <textarea id="description" class="form__field" placeholder="Your description" rows="3"></textarea>
                     <label for="description" class="form__label">Description</label>
                 </div>
 
