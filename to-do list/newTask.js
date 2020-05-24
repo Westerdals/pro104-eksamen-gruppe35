@@ -52,15 +52,17 @@ function renderToDoList(){
 
         //setter opp tasks på siden.
         newTask.innerHTML = `<div id="${taskNumber}" class="task_box"
-                                style="height:150px;
-                                    width:200px; 
+                                style="height:125px;
+                                    width:500px; 
                                     color:white; 
                                     border:1px solid black; 
+                                    border-radius: 25px;
+                                    margin left 5px;
                                     background-color: ${color}">
-                                <h3>${taskName}</h3>
+                                <h3 id="taskname-style">${taskName}</h3>
                                 
-                                <p>${date}</p>
-                                <p>${description}</p>
+                                <p id="date-style">${date}</p>
+                                <p id="description-style">${description}</p>
                                 <button onclick="editTask(${taskNumber})" value="Edit Task"></button>
                             </div>`;
 

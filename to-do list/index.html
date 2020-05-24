@@ -14,25 +14,28 @@
         
         <div class="Header-Grid">
             <header>
-            <h1>New Project</h1>
+            <h1>Project Overview<h1></h1>
             <button class="btn"><i class="fa fa-home"><a href="projectsstyle.css"></a></i></button>
          </header></div>
 
      
         <div class="Main-Grid">
-         <!--New Task Overwiev-->
-            <div id= "newproject">Add New Project</div>
-        <button onclick="openNewTaskPopup()">New Task</button>
+         
+            <!--New Task Overwiev-->
+            <div id="newproject">Add New Project</div>
+            <div id="newtask-container">
+             <div id="newtask-initials"></div>  
+        <button onclick="openNewTaskPopup()">New Task</button></div>
           
-        <!--members btn-->
-        <div>Members</div>
+        <!--members overview-->
+        <div id="newmember">Add New Members</div>
        <div id="member_container">
        <div id="member_initials"></div>
         <button onclick="openMemberPopup()">New Member</button></div></div>
 
         <div class="Todo-Grid">
             <div id="task-lists">
-                <div id ="to_do_container">
+                <div id = "to_do_container">
                 <ul id="to_do_list"></ul></div>
             </div></div>
 
@@ -47,8 +50,10 @@
         </div></div>
 
 
-        <div class="Footer-Grid">Footer</div> 
-        
+        <div class="Footer-Grid">
+            <p>Copyright Gruppe 35 ©</p>
+        </div> 
+    
 
        
     </div> 
