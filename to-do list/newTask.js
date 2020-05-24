@@ -1,13 +1,12 @@
-
-
-
-function createTask(){
+function createTask() {
     event.preventDefault();
 
     const taskName = document.getElementById("taskName").value;
     const member = document.getElementById("member").value;
     const date = document.getElementById("date").value;
+
     const color = document.getElementById("color").value;
+    console.log(color);
     const description = document.getElementById("description").value;
     const updateArrey = [];
 
@@ -20,14 +19,14 @@ function createTask(){
     window.localStorage.setItem("taskList", JSON.stringify(taskList));
 
     renderToDoList();
-    
+
     closeNewTaskPopup();
     event.target.reset();
 
 
 }
 
-function renderToDoList(){
+function renderToDoList() {
 
     //henter ut listen lagret i localstorage, hvis ingen liste, lager en tom liste.
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
@@ -48,29 +47,23 @@ function renderToDoList(){
         const newTask = document.createElement("div");
 
         //Henter verdiene fra objektet så vi kan sette dem opp på siden.
-        const {taskName, member, date, color, description,} = task;
+        const { taskName, member, date, color, description, } = task;
 
         //setter opp tasks på siden.
         newTask.innerHTML = `<div id="${taskNumber}" class="task_box"
-                                style="height:125px;
-                                    width:500px; 
-                                    color:white; 
-                                    border:1px solid black; 
-                                    border-radius: 25px;
-                                    margin left 5px;
-                                    background-color: ${color}">
+                                style="background-color: ${color}">
                                 <h3 id="taskname-style">${taskName}</h3>
                                 
                                 <p id="date-style">${date}</p>
                                 <p id="description-style">${description}</p>
-                                <button onclick="editTask(${taskNumber})" value="Edit Task"></button>
+                                <button onclick="editTask(${taskNumber})"><i class="fa fa-edit"></i> Edit Task</button>
                             </div>`;
 
         //Legger den nye div'en med tekst i til HTML doc.
         toDoList.appendChild(newTask);
 
         //inkrementerer TaskNumber for at alle newTasks skal få unik ID.
-        taskNumber ++;
+        taskNumber++;
     }
 }
 
@@ -85,4 +78,3 @@ window.addEventListener("storage", function(event) {
         renderToDoList();
     }
 })
-

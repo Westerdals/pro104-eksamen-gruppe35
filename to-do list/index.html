@@ -56,7 +56,8 @@
 
 
         <div id="toDo" class="tasks">
-            <div class="task" onclick="openEditPopup()">
+            <div id="to_do_list"></div>
+            <!-- <div class="task" onclick="openEditPopup()">
                 <p>hei<i class="fa fa-edit"></i></p>
             </div>
             <div class="task">
@@ -64,7 +65,7 @@
             </div>
             <div class="task">
                 <p>hei</p>
-            </div>
+            </div> -->
         </div>
         <div id="inProgress" class="tasks">
             <div class="task">
@@ -131,8 +132,8 @@
                 </div>
 
                 <div class="form__group">
-                    <input type="date" id="dueDate" class="form__field" placeholder="Due date">
-                    <label for="dueDate" class="form__label">Due date</label>
+                    <input type="date" id="date" class="form__field" placeholder="Due date">
+                    <label for="date" class="form__label">Due date</label>
                 </div>
 
                 <div class="form__group">
@@ -141,12 +142,26 @@
                 </div>
 
                 <p>Choose priority for task:</p>
+
+                <div><input id="color" type="color" list="presetColors">
+                    <datalist id="presetColors">
+                            <option>#ff0000</option>
+                            <option>#00ff00</option>
+                            <option>#0000ff</option>
+                        </datalist></div>
+
+                <!-- <fieldset id="color">
+                    <input type="radio" value="red" name="group1">
+                    <input type="radio" value="orange" name="group1">
+                    <input type="radio" value="yellow" name="group1">
+                </fieldset> -->
+                <!-- r
                 <div class="color">
-                    <div class="red selectedColor"></div>
+                    <div id="color" class="red selectedColor"></div>
                     <div class="orange"></div>
                     <div class="yellow"></div>
                 </div>
-
+ -->
                 <div class="button-wrapper">
                     <input type="submit" value="Create" />
                 </div>
@@ -196,12 +211,20 @@
                     <input type="date" id="saved_date" class="form__field" placeholder="Due date">
                     <label for="saved_date" class="form__label">Due date</label>
                 </div>
-                <p>Priority:</p>
-                <div class="color">
+
+                <label>Priority
+                    <div><input id="color" type="color" list="presetColors">
+                        <datalist id="presetColors">
+                            <option>#ff0000</option>
+                            <option>#00ff00</option>
+                            <option>#0000ff</option>
+                        </datalist></div>
+                </label>
+                <!-- <div class="color">
                     <div class="red selectedColor"></div>
                     <div class="orange"></div>
                     <div class="yellow"></div>
-                </div>
+                </div> -->
 
                 <div class="form__group">
                     <textarea id="saved_description" class="form__field" placeholder="Your description" rows="3"></textarea>
@@ -223,11 +246,7 @@
                 <div id="updates_output">
 
                 </div>
-
-
-
             </form>
-
 
         </div>
     </div>
@@ -289,16 +308,27 @@
             </div>
         </div> -->
 
+    <div class="Todo-Grid">
+        <div id="task-lists">
+            <div id="to_do_container">
+                <ul id="to_do_list"></ul>
+            </div>
+        </div>
+    </div>
 
 
-    <script>
-        function closePopup() {
-            var popups = document.getElementsByClassName("popup")
-            for (var i = 0; i < popups.length; i++) {
-                popups[i].classList.remove("open");
-            }
-        }
-    </script>
+    <div class="InProgress-Grid">
+        <div id="in_progress_container">
+            <ul id="in_progress_list"></ul>
+        </div>
+    </div>
+
+    <div class="Done-Grid">
+        <div id="done_container">
+            <ul id="done_list"></ul>
+        </div>
+    </div>
+
     <script src="./mainpage.js"></script>
     <script src="./newTask.js"></script>
     <script src="./editTask.js"></script>
