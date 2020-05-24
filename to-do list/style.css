@@ -1,13 +1,152 @@
-*{
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins'
+/* 
+Ikke bruk position absolute på alt, da ligger alt strødt
+ting må plasssres i forhold til hverandre
+sånn at de legger seg etter hverandre
+
+Oppgave: 
+Sørge for at farger er like / stemmer overens med skisse
+Samme struktur på klassenavn / id
+*/
+
+
+/* Top bar */
+
+.topBar {
+    background-color: grey;
+    display: flex;
 }
-.container {
-    height: 100vh;
-    width: auto;
-    margin: 0 ;
+
+.homeBtn {
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 35px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.homeBtn:hover {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+
+/* Overview */
+
+.overview {
+    display: flex;
+}
+
+.overview>div {
+    width: 100%;
+    background-color: violet;
+}
+
+@media(max-width: 600px) {
+    .overview {
+        display: block;
+    }
+}
+
+.members {
+    display: flex;
+}
+
+.member {
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border: 1px solid grey;
+    position: relative;
+}
+
+.member:not(:first-of-type) {
+    margin-left: -10px;
+}
+
+.member>p {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.priority {
+    display: flex;
+}
+
+.priority span {
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    display: inline-block;
+}
+
+.high {
+    background-color: tomato;
+}
+
+.medium {
+    background-color: orange;
+}
+
+.low {
+    background-color: yellow;
+}
+
+.priority>p {
+    margin-right: 10px;
+}
+
+.theBoard {
+    max-width: 1200px;
+    margin: auto;
     display: grid;
+    grid-template-columns: repeat(2, 350px);
+    grid-auto-columns: 350px;
+    grid-auto-flow: column;
+    grid-gap: 20px;
+    grid-template-areas: "head head head" "toDo inProgress done";
+    overflow-x: auto;
+}
+
+.task {
+    height: 60px;
+}
+
+.boardHeader {
+    grid-area: toDoHead;
+}
+
+.boardHeader {
+    grid-area: toDoHead;
+}
+
+.boardHeader {
+    grid-area: toDoHead;
+}
+
+#toDo {
+    grid-area: toDo;
+}
+
+#inProgress {
+    grid-area: inProgress;
+}
+
+#done {
+    grid-area: done;
+}
+
+
+/* 
+.container {
+    width: auto;
+    margin: 0;
+    display: grid;
+<<<<<<< HEAD
     grid-template-areas: "header header header"
                          "main main main"
                          "left middle right"
@@ -24,29 +163,39 @@
  } 
 .Main-Grid{
     grid-area:  main;
+=======
+    grid-template-areas: "header header header" "main main main" "left middle right" "footer footer footer";
+    grid-template-columns: 2fr 2fr 2fr;
+}
+
+.Main-Grid {
+    grid-area: main;
+>>>>>>> 6ea3c413004a77d4109ec31f1b743b0d086c4dd3
     background: #DDDDDD;
- }
- .Todo-Grid {
+}
+
+.Todo-Grid {
     grid-area: left;
     background: #DDDDDD;
     border: solid;
-    Overflow: scroll;
-    
- }
- .InProgress-Grid{
+    overflow: scroll;
+}
+
+.InProgress-Grid {
     grid-area: middle;
     background: #DDDDDD;
-    Overflow: scroll;
+    overflow: scroll;
     border: solid;
+}
 
- }
- .Done-Grid{
+.Done-Grid {
     background: #DDDDDD;
     grid-area: right;
-    Overflow: scroll;
+    overflow: scroll;
     border: solid;
- }
- .Footer-Grid {
+}
+
+.Footer-Grid {
     grid-area: footer;
     background: #DDDDDD;
     text-align: center;
@@ -87,17 +236,12 @@ h4{
     text-align: center;
     border-radius: 8px;
 }
-#newmember{
-    position: absolute;
-    left: 700px;
-    top: 200px;
+
+#newmember {
     font-size: 35px;
 }
-#member_container{
-    position: absolute;
-    left: 800px;
-    top: 250px;
-    background-color: #447CFF ;
+
+#member_container {
     padding: 10px 10px;
     text-align: center;
     border-radius: 8px;
@@ -142,9 +286,10 @@ hr{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     display: none;
 }
+
 .popup_main {
     position: fixed;
     width: 800px;
@@ -157,6 +302,7 @@ hr{
     top: 50%;
     margin-top: -350px;
 }
+
 .popup_close {
     position: absolute;
     width: 25px;
@@ -166,7 +312,8 @@ hr{
     top: 5px;
     cursor: pointer;
 }
+
 #new_task_close_div p {
     margin-top: 0;
     font-weight: bold;
-}
+} */

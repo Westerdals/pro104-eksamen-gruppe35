@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./sharedstyles.css">
     <title>ToDo List</title>
 </head>
+
 <body>
 
     <div class="container">
@@ -75,134 +78,189 @@
     <div id="new_task_popup" class="background_for_popup">
         <div id="popup_main_div" class="popup_main">
             <form onsubmit="createTask(event)">
-                <label>Task
-                <div><input id="taskName" placeholder="Task Name"/></div>
-                <div>
-                </label>
-                    <label>Member
-                        <div><input id="member" placeholder="Lars Hjelen"/></div>
-                    </label>
+                <div class="form__group">
+                    <input type="text" id="taskName" class="form__field" placeholder="Task name">
+                    <label for="taskName" class="form__label">Task name</label>
                 </div>
-                <div>
-                    <label>Due Date
-                        <div><input id="date" type="date"></div>
-                    </label>
+
+                <div class="form__group">
+                    <input type="text" id="member" class="form__field" placeholder="Member">
+                    <label for="member" class="form__label">Member</label>
                 </div>
-                <div>
-                    <label>Priority
-                        <div><input id="color" type="color" list="presetColors">
-                            <datalist id="presetColors">
-                              <option>#ff0000</option>/>
-                              <option>#00ff00</option>
-                              <option>#0000ff</option>
-                            </datalist></div>
-                    </label>
+
+                <div class="form__group">
+                    <input type="date" id="dueDate" class="form__field" placeholder="Due date">
+                    <label for="dueDate" class="form__label">Due date</label>
                 </div>
-                <div>
-                    <label>Description:
-                        <div><textarea id="description" placeholder="Description of the task..."></textarea></div>
-                    </label>
+
+                <div class="form__group">
+                    <textarea id="description" class="form__field" placeholder="Your description" rows="3"></textarea>
+                    <label for="description" class="form__label">Description</label>
                 </div>
-                <div>
-                    <input type="submit"/>
+
+                <p>Choose priority for task:</p>
+                <div class="color">
+                    <div class="red selectedColor"></div>
+                    <div class="orange"></div>
+                    <div class="yellow"></div>
                 </div>
-                
-            </form>
-            <div id="close_new_task_popup" class="popup_close" title="Close" onclick="closeNewTaskPopup()">
-                <p>
-                    X
-                </p>
-            </div>
-        
+
+                <div class="button-wrapper">
+                    <input type="submit" value="Create" />
+                </div>
+
         </div>
+
     </div>
 
-<!--Add new member popup-->
-    <div id="popup_member_background" class="background_for_popup">
-        <div id="popup_member_main" class="popup_main">
+    <!--Add new member popup-->
+
+
+    <div id="popup_member_main" class="popup">
+        <div class="popupInner">
+            <a onclick="closePopup()" href="#" class="close"></a>
+
             <form onsubmit="createMember(event)">
-                <label>Name
-                    <div><input id="memberNameInput" placeholder="Ola Nordmann"></div>
-                </label>
-
-                <div>
-                    <input type="submit"/>
+                <div class="form__group">
+                    <input type="text" id="memberNameInput" class="form__field" placeholder="Member name">
+                    <label for="memberNameInput" class="form__label">Member name</label>
+                </div>
+                <div class="button-wrapper">
+                    <input type="submit" value="Create" />
                 </div>
             </form>
-
-            <div id="member_popup_close_div" class="popup_close" title="Close" onclick="closeMemberPopup()">
-                <p>
-                    X
-                </p>
-            </div>
         </div>
     </div>
 
 
-<!-- Edit task popup-->
-    <div>
-        <div id="edit_task_popup" class="background_for_popup">
-            <div id="edit_task_popup" class="popup_main">
-                <form onsubmit="saveEditTask(event)">
-                    <label>Task
-                    <div><input id="saved_task_name" value="Task Name"/></div>
-                    <div>
-                    </label>
-                        <label>Member
-                            <div><input id="saved_member" value="Lars Hjelen"/></div>
-                        </label>
-                    </div>
-                    <div>
-                        <label>Due Date
-                            <div><input id="saved_date" type="date" value=""></div>
-                        </label>
-                    </div>
-                    <div>
-                        <label>Priority
-                            <div><input id="saved_color" type="color" list="presetColors" value="">
-                                <datalist id="presetColors">
-                                  <option>#ff0000</option>/>
-                                  <option>#00ff00</option>
-                                  <option>#0000ff</option>
-                                </datalist></div>
-                        </label>
-                    </div>
-                    <div>
-                        <label>Description:
-                            <div><textarea id="saved_description" value="Description of the task..."></textarea></div>
-                        </label>
-                    </div>
-                    <div>
-                        <input type="submit"/>
-                    </div>
-                </form>
 
-                <div>
-                    
-                    <label>Updates
-                        <div><textarea id="update"></textarea></div>
-                    </label>
-                    <div>
-                        <input type="button" value="Update" onclick="saveNewUpdate()"/>
-                    </div>
-                    
+    <!-- Edit task popup-->
+
+    <div id="edit_task_popup" class="popup">
+        <div class="popupInner">
+            <a onclick="closePopup()" href="#" class="close"></a>
+
+            <form onsubmit="saveEditTask(event)">
+
+                <div class="form__group">
+                    <input type="text" id="saved_task_name" class="form__field" placeholder="Task name">
+                    <label for="saved_task_name" class="form__label">Task name</label>
+                </div>
+                <div class="form__group">
+                    <input type="text" id="saved_member" class="form__field" placeholder="Member">
+                    <label for="saved_member" class="form__label">Member</label>
+                </div>
+                <div class="form__group">
+                    <input type="date" id="saved_date" class="form__field" placeholder="Due date">
+                    <label for="saved_date" class="form__label">Due date</label>
+                </div>
+                <p>Priority:</p>
+                <div class="color">
+                    <div class="red selectedColor"></div>
+                    <div class="orange"></div>
+                    <div class="yellow"></div>
+                </div>
+
+                <div class="form__group">
+                    <textarea id="saved_description" class="form__field" placeholder="Your description" rows="3"></textarea>
+                    <label for="saved_description" class="form__label">Description</label>
+                </div>
+                <div class="button-wrapper">
+                    <input type="submit" value="Create" />
+                </div>
+
+
+                <div class="form__group">
+                    <textarea id="update" class="form__field" placeholder="Write an update" rows="3"></textarea>
+                    <label for="update" class="form__label">Updates</label>
+                </div>
+                <div class="button-wrapper">
+                    <input class="btn" type="button" value="Update" onclick="saveNewUpdate()" />
+                </div>
+
                 <div id="updates_output">
 
                 </div>
-                </div>
 
-                <div id="close_edit_task_popup" class="popup_close" title="Close" onclick="closeEditTaskPopup()">
-                    <p>
-                        X
-                    </p>
-                </div>
-            </div>
+
+
+            </form>
+
+
         </div>
     </div>
-    
+
+    <!-- <div id="edit_task_popup" class="popup">
+            <div id="edit_task_popup" class="popup_main">
+                <form onsubmit="saveEditTask(event)">
+                    <label>Task
+                        <div><input id="saved_task_name" value="Task Name" /></div>
+                        <div>
+                    </label>
+                    <label>Member
+                        <div><input id="saved_member" value="Lars Hjelen" /></div>
+                    </label>
+            </div>
+            <div>
+                <label>Due Date
+                    <div><input id="saved_date" type="date" value=""></div>
+                </label>
+            </div>
+            <div>
+                <label>Priority
+                    <div><input id="saved_color" type="color" list="presetColors" value="">
+                        <datalist id="presetColors">
+                            <option>#ff0000</option>
+                            <option>#00ff00</option>
+                            <option>#0000ff</option>
+                        </datalist></div>
+                </label>
+            </div>
+            <div>
+                <label>Description:
+                    <div><textarea id="saved_description" value="Description of the task..."></textarea></div>
+                </label>
+            </div>
+            <div>
+                <input type="submit" />
+            </div>
+            </form>
+
+            <div>
+
+                <label>Updates
+                    <div><textarea id="update"></textarea></div>
+                </label>
+                <div>
+                    <input type="button" value="Update" onclick="saveNewUpdate()" />
+                </div>
+
+                <div id="updates_output">
+
+                </div>
+            </div>
+
+            <div id="close_edit_task_popup" class="popup_close" title="Close" onclick="closeEditTaskPopup()">
+                <p>
+                    X
+                </p>
+            </div>
+        </div> -->
+
+
+
+    <script>
+        function closePopup() {
+            var popups = document.getElementsByClassName("popup")
+            for (var i = 0; i < popups.length; i++) {
+                popups[i].classList.remove("open");
+            }
+        }
+    </script>
     <script src="./mainpage.js"></script>
     <script src="./newTask.js"></script>
     <script src="./editTask.js"></script>
     <script src="./newMember.js"></script>
 </body>
+
 </html>
