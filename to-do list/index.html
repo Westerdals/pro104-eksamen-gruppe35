@@ -13,11 +13,13 @@
 
 <body>
 
+    <!-- Toppbaren med hjemknapp -->
     <div class="topBar">
         <a href="projects.html" class="homeBtn"><i class="fa fa-home"></i></a>
         <h1>Webshop</h1>
     </div>
 
+    <!-- Menylinje -->
     <div class="overview">
         <div>
             <p>Project overview</p>
@@ -46,6 +48,7 @@
         </div>
     </div>
 
+    <!-- Task Board -->
     <div class="theBoard">
 
         <p>To do</p>
@@ -58,17 +61,16 @@
 
         <div id="toDo" class="tasks">
             <div id="to_do_list"></div>
-
         </div>
+
         <div id="inProgress" class="tasks">
-
+            <div id="in_progress_list"></div>
         </div>
+
         <div id="done" class="tasks">
-
+            <div id="done_list"></div>
         </div>
-
     </div>
-
 
 
     <!--Add new task popup-->
@@ -116,8 +118,6 @@
     </div>
 
     <!--Add new member popup-->
-
-
     <div id="popup_member_main" class="popup">
         <div class="popupInner">
             <a onclick="closePopup('popup_member_main')" href="#" class="close"></a>
@@ -134,10 +134,7 @@
         </div>
     </div>
 
-
-
     <!-- Edit task popup-->
-
     <div id="edit_task_popup" class="popup">
         <div class="popupInner">
             <a onclick="closePopup('edit_task_popup')" href="#" class="close"></a>
@@ -161,17 +158,15 @@
                         </div>
 
 
-                        <div><input id="saved_color" type="color" list="presetColors">
+                        <div>
+                            <input id="saved_color" type="color" list="presetColors">
                             <datalist id="presetColors">
                                 <option>#ff0000</option>
                                 <option>#00ff00</option>
                                 <option>#0000ff</option>
-                            </datalist></div>
-                        <!-- <div class="color">
-                        <div class="red selectedColor"></div>
-                        <div class="orange"></div>
-                        <div class="yellow"></div>
-                    </div> -->
+                            </datalist>
+                        </div>
+
 
                         <div class="form__group">
                             <textarea id="saved_description" class="form__field" placeholder="Your description" rows="3"></textarea>
@@ -198,84 +193,6 @@
                     </div>
                 </div>
             </form>
-        </div>
-    </div>
-
-    <!-- <div id="edit_task_popup" class="popup">
-            <div id="edit_task_popup" class="popup_main">
-                <form onsubmit="saveEditTask(event)">
-                    <label>Task
-                        <div><input id="saved_task_name" value="Task Name" /></div>
-                        <div>
-                    </label>
-                    <label>Member
-                        <div><input id="saved_member" value="Lars Hjelen" /></div>
-                    </label>
-            </div>
-            <div>
-                <label>Due Date
-                    <div><input id="saved_date" type="date" value=""></div>
-                </label>
-            </div>
-            <div>
-                <label>Priority
-                    <div><input id="saved_color" type="color" list="presetColors" value="">
-                        <datalist id="presetColors">
-                            <option>#ff0000</option>
-                            <option>#00ff00</option>
-                            <option>#0000ff</option>
-                        </datalist></div>
-                </label>
-            </div>
-            <div>
-                <label>Description:
-                    <div><textarea id="saved_description" value="Description of the task..."></textarea></div>
-                </label>
-            </div>
-            <div>
-                <input type="submit" />
-            </div>
-            </form>
-
-            <div>
-
-                <label>Updates
-                    <div><textarea id="update"></textarea></div>
-                </label>
-                <div>
-                    <input type="button" value="Update" onclick="saveNewUpdate()" />
-                </div>
-
-                <div id="updates_output">
-
-                </div>
-            </div>
-
-            <div id="close_edit_task_popup" class="popup_close" title="Close" onclick="closeEditTaskPopup()">
-                <p>
-                    X
-                </p>
-            </div>
-        </div> -->
-
-    <div class="Todo-Grid">
-        <div id="task-lists">
-            <div id="to_do_container">
-                <ul id="to_do_list"></ul>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="InProgress-Grid">
-        <div id="in_progress_container">
-            <ul id="in_progress_list"></ul>
-        </div>
-    </div>
-
-    <div class="Done-Grid">
-        <div id="done_container">
-            <ul id="done_list"></ul>
         </div>
     </div>
 

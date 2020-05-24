@@ -22,8 +22,6 @@ function editTask(i) {
     //viser edit task vinduet.
     openPopup('edit_task_popup');
 
-    console.log(taskList)
-
     //Legger tasks fra index posisjon inn i form
     savedTaskName.value = taskList[i].taskName;
     savedMember.value = taskList[i].member;
