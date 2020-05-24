@@ -57,7 +57,8 @@ function renderToDoList(){
                                     color:white; 
                                     border:1px solid black; 
                                     border-radius: 25px;
-                                    margin left 5px;
+                                    margin-left: 5px;
+                                    margin-top: 5px;
                                     background-color: ${color}">
                                 <h3 id="taskname-style">${taskName}</h3>
                                 
