@@ -70,6 +70,6 @@ function getInitials(name){
         }
     }
 
-    return initials;
+    return initials.toUpperCase(member);
 
 }
