@@ -1,9 +1,9 @@
-function createMember(){
+function createMember() {
     event.preventDefault();
 
     const member = document.getElementById("memberNameInput").value;
 
-    const memberArray = {member}; //Trenger kanskje ikke memberArray..?
+    const memberArray = { member }; //Trenger kanskje ikke memberArray..?
 
     const memberList = JSON.parse(window.localStorage.getItem("memberList")) || [];
 
@@ -12,13 +12,13 @@ function createMember(){
     window.localStorage.setItem("memberList", JSON.stringify(memberList));
 
     renderMemberList();
-    
-    closeMemberPopup();
+
+    closePopup();
     event.target.reset();
 
 }
 
-function renderMemberList(){
+function renderMemberList() {
 
     //Henter ut medlemslisten lagret i localstorage
     const memberList = JSON.parse(window.localStorage.getItem("memberList")) || [];
@@ -36,11 +36,11 @@ function renderMemberList(){
         const newMember = document.createElement("div");
 
         //Henter verdiene fra objektet så initialene blir synlige på siden
-        const {member} = memberArray;
+        const { member } = memberArray;
 
         //setter opp members på siden.
         newMember.innerHTML =
-        `<div 
+            `<div 
             <p>${getInitials(member)} </p>
         </div>`;
 
@@ -55,11 +55,11 @@ renderMemberList();
 
 const name = document.getElementById("memberNameInput").value;
 
-function getInitials(name){
+function getInitials(name) {
     let initials = "";
     let newWord = false;
 
-    for(var i=0; i < name.length; i++){
+    for (var i = 0; i < name.length; i++) {
         if (!newWord) {
             initials += name[i];
             newWord = true;

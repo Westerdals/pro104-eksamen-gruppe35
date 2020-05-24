@@ -20,7 +20,7 @@ function editTask(i) {
     const taskList = JSON.parse(window.localStorage.getItem("taskList"));
 
     //viser edit task vinduet.
-    editTaskPopup.style.display = "block";
+    editTaskPopup.classList.toggle("open");
 
     //Legger tasks fra index posisjon inn i form
     savedTaskName.value = taskList[i].taskName;

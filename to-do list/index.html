@@ -57,58 +57,13 @@
 
         <div id="toDo" class="tasks">
             <div id="to_do_list"></div>
-            <!-- <div class="task" onclick="openEditPopup()">
-                <p>hei<i class="fa fa-edit"></i></p>
-            </div>
-            <div class="task">
-                <p>hei</p>
-            </div>
-            <div class="task">
-                <p>hei</p>
-            </div> -->
+
         </div>
         <div id="inProgress" class="tasks">
-            <div class="task">
-                <p>hallo</p>
-            </div>
-            <div class="task">
-                <p>hallo</p>
-            </div>
-            <div class="task">
-                <p>hallo</p>
-            </div>
+
         </div>
         <div id="done" class="tasks">
-            <div class="task">
-                <p>hallo</p>
-            </div>
-            <div class="task">
-                <p>hallo</p>
-            </div>
-            <div class="task">
-                <p>hallo</p>
-            </div>
-            <div class="task">
-                <p>hallo</p>
-            </div>
-            <div class="task">
-                <p>hallo</p>
-            </div>
-            <div class="task">
-                <p>hallo</p>
-            </div>
-            <div class="task">
-                <p>hallo</p>
-            </div>
-            <div class="task">
-                <p>hallo</p>
-            </div>
-            <div class="task">
-                <p>hallo</p>
-            </div>
-            <div class="task">
-                <p>hallo</p>
-            </div>
+
         </div>
 
     </div>
@@ -116,7 +71,7 @@
 
 
     <!--Add new task popup-->
-    <div id="new_task_popup" class="popup open">
+    <div id="new_task_popup" class="popup">
         <div class="popupInner">
             <a onclick="closePopup()" href="#" class="close"></a>
 
@@ -150,18 +105,7 @@
                             <option>#0000ff</option>
                         </datalist></div>
 
-                <!-- <fieldset id="color">
-                    <input type="radio" value="red" name="group1">
-                    <input type="radio" value="orange" name="group1">
-                    <input type="radio" value="yellow" name="group1">
-                </fieldset> -->
-                <!-- r
-                <div class="color">
-                    <div id="color" class="red selectedColor"></div>
-                    <div class="orange"></div>
-                    <div class="yellow"></div>
-                </div>
- -->
+
                 <div class="button-wrapper">
                     <input type="submit" value="Create" />
                 </div>
@@ -212,14 +156,13 @@
                     <label for="saved_date" class="form__label">Due date</label>
                 </div>
 
-                <label>Priority
-                    <div><input id="color" type="color" list="presetColors">
-                        <datalist id="presetColors">
+
+                <div><input id="color" type="color" list="presetColors">
+                    <datalist id="presetColors">
                             <option>#ff0000</option>
                             <option>#00ff00</option>
                             <option>#0000ff</option>
                         </datalist></div>
-                </label>
                 <!-- <div class="color">
                     <div class="red selectedColor"></div>
                     <div class="orange"></div>
