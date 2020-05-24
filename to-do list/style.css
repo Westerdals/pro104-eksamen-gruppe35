@@ -51,8 +51,14 @@ Samme struktur på klassenavn / id
 }
 
 .overview>div {
-    width: calc(100% / 3);
+    width: 100%;
     background-color: violet;
+}
+
+@media(max-width: 600px) {
+    .overview {
+        display: block;
+    }
 }
 
 .members {
