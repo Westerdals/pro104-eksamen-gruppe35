@@ -6,6 +6,19 @@
     font-family: 'Poppins'
 }
 
+.split {
+    display: flex;
+}
+
+.split>div {
+    width: 100%;
+    padding: 10px;
+}
+
+.split>div:not(:first-of-type) {
+    border-left: 1px solid #ddd;
+}
+
 
 /* Popup */
 

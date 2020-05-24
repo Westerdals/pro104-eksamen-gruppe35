@@ -6,7 +6,7 @@ function createTask() {
     const date = document.getElementById("date").value;
 
     const color = document.getElementById("color").value;
-    console.log(color);
+
     const description = document.getElementById("description").value;
     const updateArrey = [];
 
@@ -20,7 +20,7 @@ function createTask() {
 
     renderToDoList();
 
-    closeNewTaskPopup();
+    closePopup('new_task_popup');
     event.target.reset();
 
 

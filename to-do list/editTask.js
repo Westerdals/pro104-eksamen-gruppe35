@@ -20,7 +20,9 @@ function editTask(i) {
     const taskList = JSON.parse(window.localStorage.getItem("taskList"));
 
     //viser edit task vinduet.
-    editTaskPopup.classList.toggle("open");
+    openPopup('edit_task_popup');
+
+    console.log(taskList)
 
     //Legger tasks fra index posisjon inn i form
     savedTaskName.value = taskList[i].taskName;
@@ -59,7 +61,7 @@ function saveEditTask() {
     renderToDoList();
 
     //lukker edit popup.
-    closeEditTaskPopup();
+    closePopup('edit_task_popup');
 }
 
 function saveNewUpdate() {
@@ -96,8 +98,4 @@ function renderUpdates() {
     updatesOutput.innerHTML = updatesText;
 
     updatesText = "";
-}
-
-function closeEditTaskPopup() {
-    editTaskPopup.style.display = "none";
 }
