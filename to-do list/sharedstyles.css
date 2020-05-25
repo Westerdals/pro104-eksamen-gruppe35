@@ -146,11 +146,22 @@ label,
 /* Button */
 
 .btn {
-    padding: 15px;
+    padding: 10px 15px;
     margin: auto;
+    background-color: #FFF5EE;
+    border: 1px solid #009788;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
     font-size: 16px;
     cursor: pointer;
     -webkit-appearance: button;
+}
+
+.btn:hover {
+    background-color: #FFF5EE;
+    transform: scale(1.03);
 }
 
 .button-wrapper {
