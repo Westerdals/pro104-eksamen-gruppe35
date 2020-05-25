@@ -50,7 +50,10 @@ function renderToDoList() {
         const { taskName, member, date, color, description, } = task;
 
         //setter opp tasks på siden.
-        newTask.innerHTML = `<div id="${taskNumber}" class="task_box"
+        newTask.innerHTML = `<div id="${taskNumber}" 
+                                class="task_box"
+                                draggable="true"
+                                ondragstart="onDragStart(event)"
                                 style="background-color: ${color}">
                                 <h3 id="taskname-style">${taskName}</h3>
                                 
