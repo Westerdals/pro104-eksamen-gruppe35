@@ -14,17 +14,15 @@
 <body>
 
     <!-- Toppbaren med hjemknapp -->
-    <div class="topBar">
-        <a href="projects.html" class="homeBtn"><i class="fa fa-home"></i></a>
-        <h1>Webshop</h1>
-    </div>
+
 
     <!-- Menylinje -->
     <div class="overview">
         <div>
-            <p>Project overview</p>
-            <br>
-            <br>
+            <div class="split">
+                <a href="projects.html" class="homeBtn"><i class="fa fa-home"></i></a>
+                <h1>Webshop</h1>
+            </div>
             <button onclick="openPopup('new_task_popup')" class="btn">Add task</button>
         </div>
         <div>
@@ -53,11 +51,11 @@
     <!-- Task Board -->
     <div class="theBoard">
 
-        <p>To do</p>
+        <p style="text-align: center;">To do</p>
 
-        <p>In progress</p>
+        <p style="text-align: center;border-left: 1px solid;border-right: 1px solid;">In progress</p>
 
-        <p>Done</p>
+        <p style="text-align: center;">Done</p>
 
 
 
@@ -65,7 +63,7 @@
             <div id="to_do_list"></div>
         </div>
 
-        <div id="inProgress" class="tasks" ondragover="onDragOver(event)" ondrop="onDrop(event)">
+        <div id="inProgress" class="tasks" style="border-left: 1px solid;border-right: 1px solid;" ondragover="onDragOver(event)" ondrop="onDrop(event)">
             <div id="in_progress_list"></div>
         </div>
 
@@ -103,12 +101,14 @@
 
                 <p>Choose priority for task:</p>
 
-                <div><input id="color" type="color" list="presetColors">
+                <div>
+                    <input id="color" type="color" list="presetColors">
                     <datalist id="presetColors">
-                            <option>#ff0000</option>
-                            <option>#00ff00</option>
-                            <option>#0000ff</option>
-                        </datalist></div>
+                            <option selected>#f95335</option>
+                            <option>#FCAF38</option>
+                            <option>#50A3A4</option>
+                        </datalist>
+                </div>
 
 
                 <div class="button-wrapper">
@@ -175,7 +175,7 @@
                             <label for="saved_description" class="form__label">Description</label>
                         </div>
                         <div class="button-wrapper">
-                            <input class="popupBtn" type="button" value="delete" onclick="deleteTask()"/>
+                            <input class="popupBtn" type="button" value="Delete" onclick="deleteTask()" />
                             <input class="popupBtn" type="submit" value="Save" />
                         </div>
                     </div>

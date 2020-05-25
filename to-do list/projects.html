@@ -19,28 +19,36 @@
     <h1 id="Headertxt">Project Manager</h1>
     <div class="projectContainer">
 
-            <div class id="project1">
+        <div id="project1">
             <h3 class="projectName">Webshop</h3>
-            <p class="projectDescription">Description</p>
+            <p class="projectDescription">Create an e-commerce web site.</p>
         </div>
 
         <div class id="project2">
             <h3 class="projectName">Mekonomen</h3>
-            <p class="projectDescription">Description</p>
+            <p class="projectDescription">Change cashier system service.</p>
+        </div>
+        <div class id="project3">
+            <h3 class="projectName">Elkjøp</h3>
+            <p class="projectDescription">Integrate third-party digital receipts.</p>
+        </div>
+        <div class id="project4">
+            <h3 class="projectName">McDonald's</h3>
+            <p class="projectDescription">Launch new website</p>
         </div>
 
-        <div onclick="togglePopup()" id="newProject">
-            <h4>New Project</h4>
+        <div onclick="openPopup('popup')" id="newProject">
+            <h3>New Project</h3>
             <p>+</p>
         </div>
 
     </div>
 
 
-    <div class="popup open" id="popup">
+    <div class="popup" id="popup">
         <div class="popupInner">
 
-            <a onclick="togglePopup()" href="#" class="close"></a>
+            <a onclick="closePopup('popup')" href="#" class="close"></a>
 
 
             <form action="./index.html">
@@ -62,14 +70,20 @@
                 </div>
 
                 <p>Choose a color for your project:</p>
-                <div class="color">
-                    <div class="brown selectedColor"></div>
-                    <div class="red"></div>
-                    <div class="orange"></div>
-                    <div class="yellow"></div>
-                    <div class="green"></div>
-                    <div class="blue"></div>
+
+
+                <div>
+                    <input id="color" type="color" list="presetColors">
+                    <datalist id="presetColors">
+                        <option>#90e5ff</option>
+                        <option>#9290ff</option>
+                        <option>#df90ff</option>
+                        <option>#ff90b4</option>
+                        <option>#ffdd90</option>
+                        
+                    </datalist>
                 </div>
+
                 <div class="button-wrapper">
 
 
@@ -80,17 +94,7 @@
         </form>
     </div>
     </div>
-
+    <script src="./mainpage.js"></script>
 </body>
-<script>
-    function togglePopup() {
-        var x = document.getElementById("popup");
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
-    }
-</script>
 
 </html>

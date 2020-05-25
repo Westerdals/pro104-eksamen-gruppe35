@@ -6,31 +6,46 @@ body {
 }
 
 .projectContainer {
-    display: flex;
-    flex-wrap: wrap;
+    padding-bottom: 80px;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    padding-bottom: 0;
+}
+
+@media (max-width: 800px) {
+    .projectContainer {
+        grid-template-columns: 50% 50%;
+    }
 }
 
 .projectContainer>div {
-    width: 270px;
     height: 130px;
     margin: 25px;
-    margin-top: 100px;
     padding: 15px;
 }
 
 #newProject {
-    background-color: #50A3A4;
+    background-color: #ddd;
     cursor: pointer;
 }
 
-#project1{
-    background-color: #FCAF38;
+#project1 {
+    background-color: #9290ff;
 }
 
-#project2{
-    background-color: #f95335;
+#project2 {
+    background-color: #df90ff;
 }
 
+#project3 {
+    background-color: #90e5ff;
+}
+
+#project4 {
+    background-color: #ff90b4;
+}
 
 #newProject>h4 {
     font-size: 40px;
@@ -44,8 +59,9 @@ body {
     margin: 0;
     margin-top: -20px;
 }
-H1{
-    color:  #674A40;
+
+H1 {
+    color: #674A40;
     margin-top: 50px;
     margin-left: 30px;
 }

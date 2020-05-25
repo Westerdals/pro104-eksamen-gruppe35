@@ -147,7 +147,7 @@ label,
 
 .btn {
     padding: 10px 15px;
-    margin: auto;
+    max-width: calc(100% - 40px);
     background-color: #EFF5EE;
     border: 1px solid #009788;
     border-bottom-left-radius: 20px;
@@ -250,4 +250,12 @@ input[type="button"]:hover {
 
 .blue {
     background-color: blue
+}
+
+.priorityColor {
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    position: absolute;
+    right: 10px;
 }

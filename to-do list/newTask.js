@@ -51,15 +51,17 @@ function renderToDoList() {
 
         //setter opp tasks på siden.
         newTask.innerHTML = `<div id="${taskNumber}" 
-                                class="task_box"
+                                class="taskBox"
                                 draggable="true"
                                 ondragstart="onDragStart(event)"
-                                style="background-color: ${color}">
+                                >
+                                <div class="priorityColor" style="background-color: ${color}"></div>
                                 <h3 id="taskname-style">${taskName}</h3>
                                 
+                                <p style="font-size: 12px;">Due date:</p>
                                 <p id="date-style">${date}</p>
                                 <p id="description-style">${description}</p>
-                                <button onclick="editTask(${taskNumber})"><i class="fa fa-edit"></i> Edit Task</button>
+                                <button class="btn edit" onclick="editTask(${taskNumber})"><i class="fa fa-edit"></i></button>
                             </div>`;
 
         //Legger den nye div'en med tekst i til HTML doc.
