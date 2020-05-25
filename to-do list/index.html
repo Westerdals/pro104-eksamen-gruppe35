@@ -59,15 +59,15 @@
 
 
 
-        <div id="toDo" class="tasks">
+        <div id="toDo" class="tasks" ondragover="onDragOver(event)" ondrop="onDrop(event)">
             <div id="to_do_list"></div>
         </div>
 
-        <div id="inProgress" class="tasks">
+        <div id="inProgress" class="tasks" ondragover="onDragOver(event)" ondrop="onDrop(event)">
             <div id="in_progress_list"></div>
         </div>
 
-        <div id="done" class="tasks">
+        <div id="done" class="tasks" ondragover="onDragOver(event)" ondrop="onDrop(event)">
             <div id="done_list"></div>
         </div>
     </div>
@@ -173,6 +173,7 @@
                             <label for="saved_description" class="form__label">Description</label>
                         </div>
                         <div class="button-wrapper">
+                            <input type="button" value="delete" onclick="deleteTask()"/>
                             <input type="submit" value="Save" />
                         </div>
                     </div>

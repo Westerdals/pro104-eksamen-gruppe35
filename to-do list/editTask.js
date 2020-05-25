@@ -62,6 +62,19 @@ function saveEditTask() {
     closePopup('edit_task_popup');
 }
 
+function deleteTask(){
+
+    const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
+
+    taskList.splice(openTask, 1,);
+
+    window.localStorage.setItem("taskList", JSON.stringify(taskList));
+
+    renderToDoList();
+
+    closePopup('edit_task_popup');
+}
+
 function saveNewUpdate() {
 
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
