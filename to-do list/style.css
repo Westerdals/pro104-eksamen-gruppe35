@@ -25,6 +25,7 @@ body{
 
 .overview {
     display: flex;
+    margin-left: 10px;
 }
 
 .overview>div {
@@ -40,6 +41,7 @@ body{
 
 .members {
     display: flex;
+    margin-bottom: 10px;
 }
 
 .member {
@@ -94,6 +96,7 @@ body{
 .theBoard {
     max-width: 1200px;
     margin: auto;
+    margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(2, 350px);
     grid-auto-columns: 350px;

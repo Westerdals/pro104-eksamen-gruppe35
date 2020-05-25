@@ -148,7 +148,7 @@ label,
 .btn {
     padding: 10px 15px;
     margin: auto;
-    background-color: #FFF5EE;
+    background-color: #EFF5EE;
     border: 1px solid #009788;
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;
@@ -160,12 +160,25 @@ label,
 }
 
 .btn:hover {
-    background-color: #FFF5EE;
+    background-color: #EFF5EE;
     transform: scale(1.03);
 }
 
 .button-wrapper {
     text-align: right;
+}
+
+.popupBtn {
+    padding: 10px 15px;
+    margin: auto;
+    background-color: #EFF5EE;
+    border: 1px solid #009788;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 input[type="submit"] {
@@ -177,6 +190,19 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+input[type="button"] {
+    padding: 15px;
+    margin: auto;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+
+input[type="button"]:hover {
     background-color: rgba(0, 0, 0, 0.1);
     outline: none;
 }

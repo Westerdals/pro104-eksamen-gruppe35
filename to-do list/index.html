@@ -23,6 +23,8 @@
     <div class="overview">
         <div>
             <p>Project overview</p>
+            <br>
+            <br>
             <button onclick="openPopup('new_task_popup')" class="btn">Add task</button>
         </div>
         <div>
@@ -110,7 +112,7 @@
 
 
                 <div class="button-wrapper">
-                    <input type="submit" value="Create" />
+                    <input class="popupBtn" type="submit" value="Create" />
                 </div>
 
         </div>
@@ -128,7 +130,7 @@
                     <label for="memberNameInput" class="form__label">Member name</label>
                 </div>
                 <div class="button-wrapper">
-                    <input type="submit" value="Create" />
+                    <input class="popupBtn" type="submit" value="Create" />
                 </div>
             </form>
         </div>
@@ -173,8 +175,8 @@
                             <label for="saved_description" class="form__label">Description</label>
                         </div>
                         <div class="button-wrapper">
-                            <input type="button" value="delete" onclick="deleteTask()"/>
-                            <input type="submit" value="Save" />
+                            <input class="popupBtn" type="button" value="delete" onclick="deleteTask()"/>
+                            <input class="popupBtn" type="submit" value="Save" />
                         </div>
                     </div>
 
@@ -185,7 +187,7 @@
                             <label for="update" class="form__label">Updates</label>
                         </div>
                         <div class="button-wrapper">
-                            <input class="btn" type="button" value="Comment" onclick="saveNewUpdate()" />
+                            <input class="popupBtn" type="button" value="Comment" onclick="saveNewUpdate()" />
                         </div>
 
                         <div id="updates_output">
