@@ -1,5 +1,5 @@
 const editTaskPopup = document.getElementById("edit_task_popup");
-//var user = "Lars Sponheim";
+var user = "Lars Sponheim";
 var savedTaskName = document.getElementById("saved_task_name");
 var savedMember = document.getElementById("saved_member");
 var savedDate = document.getElementById("saved_date");
@@ -33,6 +33,7 @@ function editTask(i) {
 }
 
 function saveEditTask() {
+    console.log("heiu")
     event.preventDefault();
 
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
@@ -48,11 +49,11 @@ function saveEditTask() {
 
     const task = { taskName, member, date, color, description, updateArrey, taskLocation };
 
-
-
-    //'opentask' = hvilken posisjon vi skal redigere,
-    //'1' = sletter så mange tasks som ligger der, 'task' = legger inn task i den ledige plassen.
+    console.log(task)
+        //'opentask' = hvilken posisjon vi skal redigere,
+        //'1' = sletter så mange tasks som ligger der, 'task' = legger inn task i den ledige plassen.
     taskList.splice(openTask, 1, task);
+
 
     //legger tilbake hele task listen i localstorage.
     window.localStorage.setItem("taskList", JSON.stringify(taskList));
@@ -64,11 +65,11 @@ function saveEditTask() {
     closePopup('edit_task_popup');
 }
 
-function deleteTask(){
+function deleteTask() {
 
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
 
-    taskList.splice(openTask, 1,);
+    taskList.splice(openTask, 1, );
 
     window.localStorage.setItem("taskList", JSON.stringify(taskList));
 
@@ -92,8 +93,6 @@ function saveNewUpdate() {
 function renderUpdates() {
 
     const taskList = JSON.parse(window.localStorage.getItem("taskList"));
-    let ownerName = localStorage.getItem("Owner");
-
 
     savedUpdates = taskList[openTask].updateArrey;
 
@@ -104,7 +103,7 @@ function renderUpdates() {
     for (var i2 = 0; i2 < updateArreyLength; i2++) {
 
         updatesText += `<p>
-                            <p>${ownerName}</p>
+                            <p>${user}</p>
                              ${savedUpdates[i2]}
                             <p>---------------</p>
                         </p>`

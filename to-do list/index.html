@@ -29,24 +29,19 @@
         </div>
         <div>
             <p>Members</p>
-            <div id="member_initials"></div>
-            <div class="members">
-                <div class="member">
-                    <p>KK</p>
-                </div>
-                <div class="member">
-                    <p>LH</p>
-                </div>
-            </div>
+            <div id="members" class="members"></div>
+
             <button onclick="openPopup('popup_member_main')" class="btn">Add member</button>
         </div>
         <div>
             <p>Priority</p>
+
             <div class="priority">
                 <p><span class="high"></span>High</p>
                 <p><span class="medium"></span>Medium</p>
                 <p><span class="low"></span>Low</p>
             </div>
+            <div></div>
         </div>
     </div>
 
@@ -70,7 +65,7 @@
         <div id="done" class="tasks" ondragover="onDragOver(event)" ondrop="onDrop(event)">
         </div>
     </div>
-    
+
     <!--Add new member popup-->
     <div id="popup_member_main" class="popup">
         <div class="popupInner">
@@ -82,12 +77,12 @@
                     <label for="memberNameInput" class="form__label">Member name</label>
                 </div>
                 <div class="button-wrapper">
-                    <input class="popupBtn" type="submit" value="Create" onclick="closePopup('popup_member_main')"/>
+                    <input class="popupBtn" type="submit" value="Create" onclick="closePopup('popup_member_main')" />
                 </div>
             </form>
         </div>
     </div>
-    
+
     <!--Add new task popup-->
     <div id="new_task_popup" class="popup">
         <div class="popupInner">
@@ -129,6 +124,7 @@
                 <div class="button-wrapper">
                     <input class="popupBtn" type="submit" value="Create" />
                 </div>
+            </form>
 
         </div>
 
@@ -142,8 +138,6 @@
 
             <form onsubmit="saveEditTask(event)">
                 <div class="split">
-
-
                     <div class="taskInfo">
                         <div class="form__group">
                             <input type="text" id="saved_task_name" class="form__field" placeholder="Task name">
@@ -175,7 +169,7 @@
                         </div>
                         <div class="button-wrapper">
                             <input class="popupBtn" type="button" value="Delete" onclick="deleteTask()" />
-                            <input class="popupBtn" type="submit" value="Save" onclick="closePopup('edit_task_popup')"/>
+                            <input class="popupBtn" type="submit" value="Save" onclick="closePopup('edit_task_popup')" />
                         </div>
                     </div>
 

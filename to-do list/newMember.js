@@ -24,7 +24,7 @@ function renderMemberList() {
     const memberList = JSON.parse(window.localStorage.getItem("memberList")) || [];
 
     //Henter objektet for navne initialene på medlem fra HTML
-    const memberInitials = document.getElementById("member_initials");
+    const memberInitials = document.getElementById("members");
 
     //Tømmer navne initialene på medlem
     memberInitials.innerHTML = "";
@@ -34,15 +34,14 @@ function renderMemberList() {
 
         //Lager en div og lagrer den i 'newMember'
         const newMember = document.createElement("div");
+        newMember.className = "member";
 
         //Henter verdiene fra objektet så initialene blir synlige på siden
         const { member } = memberArray;
 
         //setter opp members på siden.
         newMember.innerHTML =
-            `<div 
-            <p>${getInitials(member)} </p>
-        </div>`;
+            `<p>${getInitials(member)} </p>`;
 
         //Legger den nye div'en med tekst i til HTML doc
         memberInitials.appendChild(newMember);
