@@ -70,8 +70,24 @@
         <div id="done" class="tasks" ondragover="onDragOver(event)" ondrop="onDrop(event)">
         </div>
     </div>
+    
+    <!--Add new member popup-->
+    <div id="popup_member_main" class="popup">
+        <div class="popupInner">
+            <a onclick="closePopup('popup_member_main')" href="#" class="close"></a>
 
-
+            <form onsubmit="createMember(event)">
+                <div class="form__group">
+                    <input type="text" id="memberNameInput" class="form__field" placeholder="Member name">
+                    <label for="memberNameInput" class="form__label">Member name</label>
+                </div>
+                <div class="button-wrapper">
+                    <input class="popupBtn" type="submit" value="Create" onclick="closePopup('popup_member_main')"/>
+                </div>
+            </form>
+        </div>
+    </div>
+    
     <!--Add new task popup-->
     <div id="new_task_popup" class="popup">
         <div class="popupInner">
@@ -118,22 +134,6 @@
 
     </div>
 
-    <!--Add new member popup-->
-    <div id="popup_member_main" class="popup">
-        <div class="popupInner">
-            <a onclick="closePopup('popup_member_main')" href="#" class="close"></a>
-
-            <form onsubmit="createMember(event)">
-                <div class="form__group">
-                    <input type="text" id="memberNameInput" class="form__field" placeholder="Member name">
-                    <label for="memberNameInput" class="form__label">Member name</label>
-                </div>
-                <div class="button-wrapper">
-                    <input class="popupBtn" type="submit" value="Create" />
-                </div>
-            </form>
-        </div>
-    </div>
 
     <!-- Edit task popup-->
     <div id="edit_task_popup" class="popup">
