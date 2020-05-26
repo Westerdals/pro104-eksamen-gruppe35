@@ -8,15 +8,17 @@ function closePopup(id) {
 
 
 //Drag and drop
+
+var dragTaskId = "";
+var dropLocation = "";
+
 function onDragStart(event) {
     event
       .dataTransfer
       .setData('text/plain', event.target.id);
   
     event
-      .currentTarget
-      .style
-      .backgroundcolor = "yellow";
+      dragTaskId = event.target.id;
   }
 
 
@@ -40,6 +42,34 @@ function onDragStart(event) {
     event
       .dataTransfer
       .clearData();
+      dropLocation = event.target.id;
+
+    changeTaskLocation();
+  }
+
+  function changeTaskLocation(){
+    const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
+
+    //tar ny informasjon fra form og lagrer den i task formatet.
+    taskName = taskList[dragTaskId].taskName;
+    member = taskList[dragTaskId].member;
+    date = taskList[dragTaskId].date;
+    color = taskList[dragTaskId].color;
+    description = taskList[dragTaskId].description;
+    updateArrey = taskList[dragTaskId].updateArrey;
+    taskLocation = dropLocation;
+
+    const task = { taskName, member, date, color, description, updateArrey, taskLocation };
+
+
+
+    //'opentask' = hvilken posisjon vi skal redigere,
+    //'1' = sletter så mange tasks som ligger der, 'task' = legger inn task i den ledige plassen.
+    taskList.splice(dragTaskId, 1, task);
+
+    window.localStorage.setItem("taskList", JSON.stringify(taskList));
+
+    //renderToDoList();
   }
 
   function handleSubmit() {

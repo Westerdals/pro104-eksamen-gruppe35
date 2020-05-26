@@ -44,8 +44,10 @@ function saveEditTask() {
     color = savedColor.value;
     description = savedDescription.value;
     updateArrey = taskList[openTask].updateArrey;
+    taskLocation = taskList[openTask].taskLocation;
 
-    const task = { taskName, member, date, color, description, updateArrey };
+    const task = { taskName, member, date, color, description, updateArrey, taskLocation };
+
 
 
     //'opentask' = hvilken posisjon vi skal redigere,
