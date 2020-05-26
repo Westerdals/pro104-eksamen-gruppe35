@@ -9,9 +9,15 @@ function createTask() {
     const taskLocation = "toDo";
     const updateArrey = [];
 
+
     const task = { taskName, member, date, color, description, updateArrey, taskLocation };
 
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
+
+
+    
+
+    
 
     taskList.push(task);
 
