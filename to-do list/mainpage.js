@@ -41,3 +41,16 @@ function onDragStart(event) {
       .dataTransfer
       .clearData();
   }
+
+  function handleSubmit() {
+    let name = document.getElementById("project").value;
+
+    localStorage.setItem("Project Name", name);
+
+  }
+
+  window.addEventListener("load", () => {
+    let name = localStorage.getItem("Project Name");
+
+    document.getElementById("project_output").innerHTML = name;
+  } )
