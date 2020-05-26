@@ -72,10 +72,13 @@ function onDragStart(event) {
     //renderToDoList();
   }
 
+  //Bruker skriver inn input verdi for project name
   function handleSubmit() {
     let name = document.getElementById("project").value;
+    let ownerName = document.getElementById("owner").value;
 
     localStorage.setItem("Project Name", name);
+    localStorage.setItem("Owner", ownerName);
 
   }
 

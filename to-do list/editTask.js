@@ -1,5 +1,5 @@
 const editTaskPopup = document.getElementById("edit_task_popup");
-var user = "Lars Sponheim";
+//var user = "Lars Sponheim";
 var savedTaskName = document.getElementById("saved_task_name");
 var savedMember = document.getElementById("saved_member");
 var savedDate = document.getElementById("saved_date");
@@ -92,6 +92,8 @@ function saveNewUpdate() {
 function renderUpdates() {
 
     const taskList = JSON.parse(window.localStorage.getItem("taskList"));
+    let ownerName = localStorage.getItem("Owner");
+
 
     savedUpdates = taskList[openTask].updateArrey;
 
@@ -102,7 +104,7 @@ function renderUpdates() {
     for (var i2 = 0; i2 < updateArreyLength; i2++) {
 
         updatesText += `<p>
-                            <p>${user}</p>
+                            <p>${ownerName}</p>
                              ${savedUpdates[i2]}
                             <p>---------------</p>
                         </p>`
