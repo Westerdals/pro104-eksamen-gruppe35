@@ -55,7 +55,6 @@ function onDragStart(event) {
     taskList.splice(dragTaskId, 1, task);
     window.localStorage.setItem("taskList", JSON.stringify(taskList));
 
-    //renderToDoList();
   }
 
   //Bruker skriver inn input verdi for project name
@@ -65,6 +64,8 @@ function onDragStart(event) {
 
     localStorage.setItem("Project Name", name);
     localStorage.setItem("Owner", ownerName);
+
+    localStorage.setItem("memberList", JSON.stringify([ownerName]));
 
   }
 

@@ -1,5 +1,4 @@
 const editTaskPopup = document.getElementById("edit_task_popup");
-// var user = "Lars Sponheim";
 var savedTaskName = document.getElementById("saved_task_name");
 var savedMember = document.getElementById("saved_member");
 var savedDate = document.getElementById("saved_date");
@@ -9,6 +8,7 @@ var updatesOutput = document.getElementById("updates_output");
 var update = document.getElementById("update");
 var openTask;
 
+//editTask er knapper som blir generert med hver newTask
 function editTask(i) {
 
     openTask = i;
@@ -24,6 +24,7 @@ function editTask(i) {
     renderUpdates();
 }
 
+//Sletter task objekt og erstatter med nytt
 function saveEditTask() {
     event.preventDefault();
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
@@ -43,7 +44,7 @@ function saveEditTask() {
     renderToDoList();
     closePopup('edit_task_popup');
 }
-
+//Sletter task fra taskList
 function deleteTask() {
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
     taskList.splice(openTask, 1, );
