@@ -56,7 +56,7 @@ function deleteTask() {
 
 function saveNewUpdate() {
     const taskList = JSON.parse(window.localStorage.getItem("taskList")) || [];
-    taskList[openTask].updateArrey.push(update.value);
+    taskList[openTask].updateArrey.unshift(update.value);
     window.localStorage.setItem("taskList", JSON.stringify(taskList));
     update.value = "";
     renderUpdates();
