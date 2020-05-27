@@ -72,5 +72,8 @@ function onDragStart(event) {
   window.addEventListener("load", () => {
     let name = localStorage.getItem("Project Name");
 
-    document.getElementById("project_output").innerHTML = name;
+    const projectOutput = document.getElementById("project_output");
+    if(projectOutput){
+        projectOutput.innerHTML = name;
+    }
   } )
